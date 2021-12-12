@@ -32,19 +32,21 @@ def get_job_info(html):
     location = html.select_one("pre>div").text
     job_id = html["data-jk"]
 
+    apply_link = f"https://www.indeed.com/viewjob?jk={job_id}&from=web&vjs=3"
+
     return {
         "job_title": job_title,
         "company_name": company_name,
         "location": location,
-        "link": f"https://www.indeed.com/viewjob?jk={job_id}&from=web&vjs=3",
+        "apply_link": apply_link,
     }
 
 
 def get_jobs(last_page):
-    print("============================ 웹 크롤링 작동 중 ==========================")
+    print("============================ Indeed 스크래퍼 작동 중 ==========================")
     jobs = []
     for page in range(last_page):
-        print(f"==================== 페이지 {page+1}============================")
+        print(f" Page : {page} ================================================")
         result = requests.get(f"{URL}&start={page*LIMIT}")
         soup = BeautifulSoup(result.text, "html.parser")
         job_cards = soup.find_all("a", {"class": "tapItem"})
