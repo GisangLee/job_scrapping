@@ -1,2 +1,3 @@
 ﻿# job_scrapping
-![Finish]("/result/사진.png")
+ 
+ <img src="/result/사진.PNG" width="700" height="370">
