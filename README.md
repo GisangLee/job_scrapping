@@ -1,2 +1,2 @@
 ﻿# job_scrapping
-![Finish](사진.png)
+![Finish](./사진.png)
